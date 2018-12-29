@@ -13,3 +13,12 @@ def index():
     """ static files serve """
     return render_template('index.html', data={})
 
+
+@app.route('/save', methods=['GET', 'POST'])
+def save():
+
+    name = request.args.get("name")
+    age = request.args.get("age")
+
+    return json.dumps({'name': name, 'age': age, 'email': email})
+
